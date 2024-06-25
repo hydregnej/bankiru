@@ -1,32 +1,35 @@
-import React, { useState } from 'react';
-import { Button, Menu, MenuItem } from '@mui/material';
+import React, { useState } from 'react'
+import { Button, Menu, MenuItem, Box } from '@mui/material'
+import './Sort.css'
 
 interface SortProps {
-  onSortChange: (direction: 'asc' | 'desc') => void;
+  onSortChange: (direction: 'asc' | 'desc') => void
 }
 
 const Sort: React.FC<SortProps> = ({ onSortChange }) => {
-  const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
+  const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null)
   
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
-    setAnchorEl(event.currentTarget);
-  };
+    setAnchorEl(event.currentTarget)
+  }
   
   const handleClose = () => {
-    setAnchorEl(null);
-  };
+    setAnchorEl(null)
+  }
   
   const handleSortChange = (direction: 'asc' | 'desc') => {
-    onSortChange(direction);
-    handleClose();
-  };
+    onSortChange(direction)
+    handleClose()
+  }
 
   return (
-    <div className='sort-container'>
+    <Box className='sort-container'>
       <Button
         aria-controls="sort-menu"
         aria-haspopup="true"
         onClick={handleClick}
+        variant="contained"
+        color="primary"
       >
         Сортировать
       </Button>
@@ -40,8 +43,8 @@ const Sort: React.FC<SortProps> = ({ onSortChange }) => {
         <MenuItem onClick={() => handleSortChange('asc')}>Сортировать по возрастанию</MenuItem>
         <MenuItem onClick={() => handleSortChange('desc')}>Сортировать по убыванию</MenuItem>
       </Menu>
-    </div>
-  );
-};
+    </Box>
+  )
+}
 
-export default Sort;
+export default Sort
