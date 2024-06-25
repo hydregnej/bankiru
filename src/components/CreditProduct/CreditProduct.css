@@ -1,0 +1,46 @@
+.credit-product-card {
+  width: 300px;
+  margin: 10px;
+  cursor: pointer;
+}
+.credit-product-card:hover {
+  background-color: #f0f0f0;
+}
+
+.product-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.product-info {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.product-logo {
+  width: 50px;
+  height: auto;
+}
+
+.MuiTypography-root.product-name {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.product-info-amount {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.MuiTypography-root.product-amount-name {
+  font-size: 12px;
+
+}
+
+.MuiTypography-root.product-amount {
+  font-weight: bold;
+}
